@@ -19,6 +19,7 @@ var searchBar = Ti.UI.createSearchBar({
     var tableView;
     wassr.friendsTimeline(function(timeline) {
         var rowData = [];
+        var max;
         for ( var i=0, max = timeline.length; i < max; ++i ) {
             var row = Ti.UI.createTableViewRow( { layout: 'vertical', height: 'auto', width: 'auto'} );
             row.add( Ti.UI.createImageView( { left: 10, width: 30, height: 50, image: timeline[i].user.profile_image_url } ) );
@@ -72,18 +73,10 @@ var searchBar = Ti.UI.createSearchBar({
                 actInd.show();
                 reloadLabel.text = "Loading...";
                 tableView.setContentInsets({ top:60}, {animated:true});
-                setTimeout( function () {
-                    showTimeline();
-                    tableView.setContentInsets({ top:0, animated:false});
-                }, 2000 );
+                showTimeline();
             }
         });
+        tableView.setContentInsets({ top:0, animated:false});
         win.add(tableView);
     });
-
-    tableView = Ti.UI.createTableView({
-        data: rowData,
-        search: searchBar
-    });
-    win.add(tableView);
 }());
