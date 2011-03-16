@@ -19,7 +19,6 @@ var searchBar = Ti.UI.createSearchBar({
     var tableView;
     wassr.friendsTimeline(function(timeline) {
         var rowData = [];
-        var max;
         for ( var i=0, max = timeline.length; i < max; ++i ) {
             var row = Ti.UI.createTableViewRow( { layout: 'vertical', height: 'auto', width: 'auto'} );
             row.add( Ti.UI.createImageView( { left: 10, width: 30, height: 50, image: timeline[i].user.profile_image_url } ) );
