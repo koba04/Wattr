@@ -1,0 +1,10 @@
+Classes/
+Info.plist
+Resources/
+*.xcodeproj/
+*.pch
+build/
+headers/
+lib/
+main.m
+*.xcconfig
