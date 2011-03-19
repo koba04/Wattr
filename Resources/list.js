@@ -2,7 +2,7 @@
 var wassrId = 'koba04';
 
 Ti.include('wassr.js');
-var wassr = new Wassr('koba04');
+var wassr = Wassr.create('koba04');
 
 var win = Ti.UI.currentWindow;
 win.barColor = '#277100';
