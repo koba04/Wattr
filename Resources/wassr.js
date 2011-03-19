@@ -22,13 +22,5 @@ var Wassr = { create : function(id) {
         });
     };
 
-    // create object by prototype pattern
-    var obj = {
-        id : id,
-        friendsTimeline : friendsTimeline
-    };
-    function F() {};
-    F.prototype = obj;
-    return new F();
-
+    return Object.create({ id : id, friendsTimeline : friendsTimeline });
 } };
